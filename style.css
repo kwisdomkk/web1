@@ -1,0 +1,122 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+li{list-style: none;}
+a{text-decoration:none; color: black;}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  position: relative;
+  z-index: 2;
+  background-color:#F6F3F0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#toggle {
+  margin-left: 5px;
+  color: black;
+}
+
+.logo {
+  margin: 0 auto;
+  height: 60px;
+
+}
+
+header nav input#toggle_btn{
+  display: none;
+}
+header nav ul#toggle_menu{
+  display: none;
+  position: absolute;
+  top:100px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color:#F6F3F0;
+}
+header nav input#toggle_btn:checked ~ ul#toggle_menu{
+  display: block;
+  height:100vh;
+  transition-duration: 0.1s;
+  background-color:#F6F3F0;
+}
+header nav ul#toggle_menu li{
+  padding: 10px;color: black;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.sub-menu{display: none;}
+#toggle_menu li:hover>.sub-menu{display: block; background-color:#F6F3F0;}
+.bx-pager.bx-default-pager {
+  display: none;
+}
+.bx-prev{display: none;}
+.bx-next{display: none;}
+.bx-controls-auto{display: none;}
+.image{
+  width: 100%;
+  height:400px;
+}
+article{padding: 5%;line-height: 30px;}
+.more{ font-weight: bold;}
+.title{text-align: center; margin:30px;}
+.best_image{display: flex; flex-wrap: wrap;}
+.best_image img{width: 50%;}
+footer{
+  display: flex; flex-direction: column; justify-content: center; text-align: center;
+  color: white;
+  background-color: #424242;
+  height: 350px;
+}
+.footer_content{
+  padding: 10px;
+  font-size: medium;
+}
+#toggle_menu2 {
+  display: none;
+}
+
+@media screen and (min-width:750px) {
+  #toggle {
+    display: none
+  }
+  header nav ul#toggle_menu{
+    display: block flex !important; justify-content: space-evenly; height: 50px !important;
+  }
+  #toggle_menu li{position: relative;}
+  #toggle_menu li:hover>.sub-menu{position: absolute;width: 200px;height: 200px;}
+  article{
+    width: 50%; text-align: center; padding:5%;
+  }
+  .image{
+    object-fit: cover; width: 100%;height: 100%;
+  }
+  .image_box{
+    width: 50%;height: 450px;
+  }
+  .brand .wrapper{ justify-content: center;}
+  .wrapper{
+    display: flex;
+  }
+  .recipe .wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .best_image{display: flex;justify-content: space-around;}
+  .best_image img{width: 20%;}
+  footer{
+    flex-direction: row; justify-content: space-evenly; align-items: center;
+  }
+  
+}
+
